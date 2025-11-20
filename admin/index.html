@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champs Admin Panel - Manage Events & Promotions</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Champs Admin Panel</h1>
+            <a href="../index.html" class="back-link">\u2190 Back to Website</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Events Management -->
+            <section class="admin-section">
+                <h2>Manage Events</h2>
+                <button class="add-btn" onclick="showAddEventForm()">+ Add New Event</button>
+                
+                <div id="add-event-form" class="form-container" style="display: none;">
+                    <h3>Add New Event</h3>
+                    <form id="event-form">
+                        <input type="text" id="event-title" placeholder="Event Title" required>
+                        <input type="text" id="event-date" placeholder="Event Date (e.g., Every Thursday)" required>
+                        <input type="text" id="event-time" placeholder="Event Time (e.g., 8:00 PM - 12:00 AM)" required>
+                        <textarea id="event-description" placeholder="Event Description" required></textarea>
+                        <input type="url" id="event-image" placeholder="Image URL" required>
+                        <button type="submit">Add Event</button>
+                        <button type="button" onclick="hideAddEventForm()">Cancel</button>
+                    </form>
+                </div>
+
+                <div id="events-list" class="items-list">
+                    <!-- Events will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Promotions Management -->
+            <section class="admin-section">
+                <h2>Manage Promotions</h2>
+                <button class="add-btn" onclick="showAddPromotionForm()">+ Add New Promotion</button>
+                
+                <div id="add-promotion-form" class="form-container" style="display: none;">
+                    <h3>Add New Promotion</h3>
+                    <form id="promotion-form">
+                        <input type="text" id="promo-title" placeholder="Promotion Title" required>
+                        <input type="text" id="promo-date" placeholder="Promotion Date (e.g., Every Friday)" required>
+                        <textarea id="promo-description" placeholder="Promotion Description" required></textarea>
+                        <input type="url" id="promo-image" placeholder="Image URL" required>
+                        <button type="submit">Add Promotion</button>
+                        <button type="button" onclick="hideAddPromotionForm()">Cancel</button>
+                    </form>
+                </div>
+
+                <div id="promotions-list" class="items-list">
+                    <!-- Promotions will be loaded here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
